@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Expert - Events</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts - Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta8PUbW+Fgns4dHcnU/e2zU7pQyFYsI/yDk7Lw/r9d/w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      /* Navbar specific styles */
+      .main-navbar {
+        background-color: #fff;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      }
+
+      .navbar-logo {
+        width: 30px;
+        height: 30px;
+        background-color: #dc3545; /* Red color from image */
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 15px;
+      }
+
+      .navbar-nav-links .nav-link {
+        color: #6c757d;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+      }
+
+      .navbar-nav-links .nav-link:hover {
+        background-color: #f0f0f0;
+      }
+
+      .navbar-nav-links .nav-item.active .nav-link {
+        background-color: #f1f3f5; /* Light grey for active */
+        color: #333;
+        font-weight: 600;
+      }
+
+      .navbar-right-icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .navbar-right-icons .nav-text {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .navbar-right-icons .icon-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #f1f3f5; /* Light grey background for icons */
+        color: #6c757d;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .navbar-right-icons .icon-wrapper.user-icon {
+        background-color: #f1f3f5; /* User icon has a light grey circle */
+        color: #6c757d;
+      }
+
+      .navbar-right-icons .icon-wrapper .badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        padding: 3px 6px;
+        border-radius: 50%;
+        background-color: #dc3545; /* Red badge */
+        color: #fff;
+        font-size: 0.65rem;
+        line-height: 1;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      /* Styles for the main search section layout */
+      .search-section-container {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .search-input-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        flex-grow: 1;
+        min-width: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+
+      .search-input-card:hover {
+        background-color: #f0f0f0;
+      }
+
+      .search-input-card .input-label {
+        font-size: 0.8rem;
+        color: #6c757d;
+        margin-bottom: 5px;
+      }
+
+      .search-input-card .input-value-wrapper {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .search-input-card .input-icon {
+        margin-right: 10px;
+        color: #dc3545;
+      }
+
+      .search-input-card .dropdown-arrow {
+        margin-left: auto;
+        color: #6c757d;
+        font-size: 0.8rem;
+      }
+
+      .search-section-container .btn-danger {
+        flex-shrink: 0;
+        padding: 15px 30px;
+        height: auto;
+        align-self: stretch;
+        border-radius: 10px;
+        font-weight: 600;
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+      /* Styles for the second search bar (Find an event by name) */
+      .event-search-bar {
+        background-color: #f1f3f5;
+        border-radius: 15px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .event-search-bar .form-control-wrapper {
+        flex-grow: 1;
+        position: relative;
+      }
+
+      .event-search-bar .form-control {
+        border: none;
+        border-radius: 10px;
+        padding: 15px 15px 15px 45px;
+        font-size: 1rem;
+        height: auto;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+
+      .event-search-bar .search-icon-inside-input {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        font-size: 1rem;
+      }
+
+      .event-search-bar .btn-danger {
+        flex-shrink: 0;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-weight: 600;
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+      .event-banner-img {
+        width: 100%;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .event-card-lg {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        height: 250px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .event-card-lg:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-card-lg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(0.7);
+      }
+
+      .event-card-lg .card-body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        color: #fff;
+        z-index: 1;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0)
+        );
+      }
+
+      .event-card-lg .card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .event-card-lg .card-text {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .section-header .see-more {
+        color: #dc3545;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .section-header .navigation-arrows .btn {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eee;
+        color: #6c757d;
+        border: none;
+        margin-left: 10px;
+      }
+
+      .event-card-sm {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .event-card-sm:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-card-sm img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .event-card-sm .card-body {
+        padding: 15px;
+      }
+
+      .event-card-sm .card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .event-card-sm .card-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+
+      .event-card-sm .price-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .event-card-sm .price-info .date {
+        font-size: 0.8rem;
+        color: #dc3545;
+        font-weight: 600;
+        background-color: #ffe0e3;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .event-card-sm .price-info .price {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .event-card-sm .price-info .btn {
+        background-color: #eee;
+        color: #6c757d;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+      }
+
+      .category-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .category-card img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+
+      .category-card .card-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .footer {
+        background-color: #f1f3f5;
+        padding: 50px 0;
+        margin-top: 50px;
+        border-top: 1px solid #eee;
+      }
+
+      .footer h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer ul li a {
+        color: #6c757d;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .footer ul li a:hover {
+        color: #dc3545;
+      }
+
+      /* Pagination dots for Popular section */
+      .popular-pagination-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .popular-pagination-dots .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .popular-pagination-dots .dot.active {
+        background-color: #333;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767.98px) {
+        .main-navbar .navbar-nav-links {
+          display: none; /* Hide nav links on small screens */
+        }
+        .main-navbar .navbar-right-icons {
+          margin-left: auto; /* Push icons to right if links are hidden */
+        }
+        .navbar-right-icons .nav-text {
+          display: none; /* Hide 'Sell' text on small screens */
+        }
+        .search-section-container {
+          flex-direction: column;
+          padding: 15px;
+        }
+        .search-input-card {
+          width: 100%;
+          min-width: unset;
+        }
+        .search-section-container .btn-danger {
+          width: 100%;
+          margin-top: 15px;
+        }
+        .event-banner-img {
+          height: 200px;
+        }
+        .event-search-bar {
+          flex-direction: column;
+          padding: 15px;
+        }
+        .event-search-bar .form-control-wrapper {
+          width: 100%;
+        }
+        .event-search-bar .btn-danger {
+          width: 100%;
+          margin-top: 15px;
+        }
+        .event-card-sm img {
+          height: 120px;
+        }
+        .category-card img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Navbar -->
+    <nav class="main-navbar">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <!-- Left Section: Logo and Navigation Links -->
+          <div class="d-flex align-items-center">
+            <div class="navbar-logo">FE</div>
+            <!-- Placeholder for Flight Expert logo -->
+            <ul class="nav navbar-nav-links d-none d-md-flex">
+              <!-- Hidden on small screens -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Flight</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Hotel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Visa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">E-Sim</a>
+              </li>
+              <li class="nav-item active">
+                <!-- Active state for Activity -->
+                <a class="nav-link" href="#">Activity</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Section: Sell, Globe, Bell, User Icons -->
+          <div class="navbar-right-icons">
+            <span class="nav-text d-none d-md-inline">Sell</span>
+            <!-- Hidden on small screens -->
+            <div class="icon-wrapper">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="icon-wrapper">
+              <i class="fas fa-bell"></i>
+              <span class="badge">1</span>
+              <!-- Notification badge -->
+            </div>
+            <div class="icon-wrapper user-icon">
+              <i class="fas fa-user"></i>
+              <!-- Changed to fas fa-user for a more generic user icon -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <!-- Flight Search Section -->
+      <div class="search-section-container">
+        <!-- Location Input Card -->
+        <div class="search-input-card">
+          <div class="input-label">Location</div>
+          <div class="input-value-wrapper">
+            <i class="fas fa-map-marker-alt input-icon"></i>
+            <span class="input-text">Dhaka</span>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+        </div>
+
+        <!-- Event Type Input Card -->
+        <div class="search-input-card">
+          <div class="input-label">Event Type</div>
+          <div class="input-value-wrapper">
+            <i class="fas fa-th-large input-icon"></i>
+            <span class="input-text">All</span>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+        </div>
+
+        <!-- All dates Input Card -->
+        <div class="search-input-card">
+          <div class="input-label">All dates</div>
+          <div class="input-value-wrapper">
+            <i class="fas fa-calendar-alt input-icon"></i>
+            <span class="input-text">All dates</span>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <button class="btn btn-danger">Search</button>
+      </div>
+
+      <!-- Events Section - Now a single banner image -->
+      <div class="section-header">
+        <h2 class="section-title mb-0">Events</h2>
+        <div class="navigation-arrows">
+          <a href="#" class="see-more me-3">See more</a>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <img
+            src="img/banner-img.png"
+            alt="Events Banner"
+            class="img-fluid event-banner-img"
+          />
+        </div>
+      </div>
+
+      <!-- Second Search Bar (Find an event by name) -->
+      <div class="event-search-bar">
+        <div class="form-control-wrapper">
+          <i class="fas fa-map-marker-alt search-icon-inside-input"></i>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Find an event by name"
+          />
+        </div>
+        <button class="btn btn-danger">Search</button>
+      </div>
+
+      <!-- Popular Events Section -->
+      <div class="section-header mt-5">
+        <h2 class="section-title mb-0">Popular</h2>
+        <div class="navigation-arrows">
+          <a href="#" class="see-more me-3">See more</a>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="event-card-sm">
+            <img src="img/popular-1.png" alt="Dhaka Makers" />
+            <div class="card-body">
+              <h6 class="card-title">Dhaka Makers Experience THE MENTALIST</h6>
+              <p class="card-text">Broom Magic Experience THE MENTALIST</p>
+              <div class="price-info">
+                <span class="date">30 Jun</span>
+                <span class="price">From $1800</span>
+                <button class="btn btn-light">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="event-card-sm">
+            <img src="img/popular-2.png" alt="Let's Vibe" />
+            <div class="card-body">
+              <h6 class="card-title">Broom Magic Experience THE MENTALIST</h6>
+              <p class="card-text">Broom Magic Experience THE MENTALIST</p>
+              <div class="price-info">
+                <span class="date">11 Jul</span>
+                <span class="price">From $1500</span>
+                <button class="btn btn-light">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="event-card-sm">
+            <img src="img/popular-3.png" alt="Remix Unplugged" />
+            <div class="card-body">
+              <h6 class="card-title">Broom Magic Experience THE MENTALIST</h6>
+              <p class="card-text">Broom Magic Experience THE MENTALIST</p>
+              <div class="price-info">
+                <span class="date">18 Aug</span>
+                <span class="price">From $1400</span>
+                <button class="btn btn-light">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination dots for Popular section -->
+      <div class="popular-pagination-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <!-- Categories Section -->
+      <div class="section-header mt-5">
+        <h2 class="section-title mb-0">Categories</h2>
+        <div class="navigation-arrows">
+          <a href="#" class="see-more me-3">See more</a>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-light">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/ADD8E6/000000?text=Adventure"
+              alt="Adventure"
+            />
+            <h6 class="card-title">Adventure</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/90EE90/000000?text=Music"
+              alt="Music"
+            />
+            <h6 class="card-title">Music Events</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/FFB6C1/000000?text=Art"
+              alt="Art"
+            />
+            <h6 class="card-title">Art Events</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/DDA0DD/000000?text=Concerts"
+              alt="Concerts"
+            />
+            <h6 class="card-title">Concerts</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/F0E68C/000000?text=Festivals"
+              alt="Festivals"
+            />
+            <h6 class="card-title">Festivals</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card">
+            <img
+              src="https://placehold.co/80x80/DA70D6/000000?text=Restaurants"
+              alt="Restaurants"
+            />
+            <h6 class="card-title">Restaurants</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+            <h5>Contact Us</h5>
+            <ul>
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+            <h5>Contact Us</h5>
+            <ul>
+              <li><a href="#">Connect with me</a></li>
+              <li><a href="#">Connect with me</a></li>
+              <li><a href="#">Connect with me</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+            <h5>Contact Us</h5>
+            <ul>
+              <li><a href="#">Connect with me</a></li>
+              <li><a href="#">Connect with me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
