@@ -24,6 +24,9 @@ body {
 .fs-24 {
   font-size: 24px !important;
 }
+.fs-28 {
+  font-size: 28px !important;
+}
 
 /* Color */
 .primary-color-bg {
@@ -40,6 +43,13 @@ body {
 }
 .secondary-color-text {
   color: #a1a1aa !important;
+}
+.secondary-color-text-bg {
+  background-color: #a1a1aa !important;
+}
+
+.ticket-bg {
+  background-color: #f0f0f0 !important;
 }
 
 .body-bg {
