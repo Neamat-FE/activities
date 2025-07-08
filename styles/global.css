@@ -15,12 +15,14 @@ body {
 .fs-20 {
   font-size: 20px !important;
 }
+.rounded-20 {
+  border-radius: 20px !important;
+}
 .fs-22 {
   font-size: 22px !important;
 }
-
-.rounded-20 {
-  border-radius: 20px !important;
+.fs-24 {
+  font-size: 24px !important;
 }
 
 /* Color */

@@ -1,3 +1,15 @@
+.ticket-color-regular {
+  background-color: #00d250;
+  color: #1d1d1f;
+}
+.ticket-color-platinum {
+  background-color: #b95dff;
+  color: #1d1d1f;
+}
+.ticket-color-vip {
+  background-color: #ffbf35;
+  color: #1d1d1f;
+}
 .ticket-card {
   background: white;
   border-radius: 12px;
