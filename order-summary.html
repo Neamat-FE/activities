@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticket Page</title>
+    <title>Order Summary</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/booking.css" />
     <link rel="stylesheet" href="styles/ticket.css" />
+    <link rel="stylesheet" href="styles/order-summary.css" />
   </head>
   <body class="body-bg">
     <!-- Navigation -->
@@ -78,9 +79,8 @@
       <div class="row mt-5">
         <!-- Main Content -->
         <div class="col-lg-8">
-          <div class="rounded-4 overflow-hidden mb-4 border-0">
+          <div class="rounded-4 overflow-hidden mb-2 border-0">
             <div class="card-body">
-              <div class="row"></div>
               <div class="row d-flex align-items-center">
                 <div class="mb-3">
                   <nav
@@ -101,45 +101,18 @@
                       >
                         <a
                           href="#"
-                          class="text-decoration-none secondary-color-text"
+                          class="text-decoration-none primary-color-text"
                           >2. Order Summary</a
                         >
                       </li>
                     </ol>
                   </nav>
                 </div>
-
-                <!-- Date Selector -->
-                <div class="d-flex">
-                  <div class="mb-3 me-3">
-                    <div
-                      class="date-selector d-flex align-items-center primary-color-text-bg border-color text-white d-flex flex-column align-items-center cursor-pointer position-relative"
-                    >
-                      <div class="date-number fs-18 fw-bolder mb-1">18</div>
-                      <div class="date-month fs-16 mt-1">Jul</div>
-                      <div class="status-indicator mt-3"></div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-selector me-3 secondary-color-text-bg border-color text-white d-flex flex-column align-items-center cursor-pointer position-relative"
-                  >
-                    <div class="date-number fs-18 fw-bolder mb-1">18</div>
-                    <div class="date-month fs-16 mt-1">Jul</div>
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div
-                    class="date-selector secondary-color-text-bg border-color text-white d-flex flex-column align-items-center cursor-pointer position-relative"
-                  >
-                    <div class="date-number fs-18 fw-bolder mb-1">18</div>
-                    <div class="date-month fs-16 mt-1">Jul</div>
-                    <div class="status-indicator"></div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
 
-          <!-- Offline Tickets -->
+          <!-- Payment Methods -->
 
           <div class="bg-white rounded-4 p-4 mb-4">
             <div class="mb-4">
@@ -147,166 +120,56 @@
                 class="d-flex justify-content-between align-items-center mb-4"
               >
                 <div>
-                  <h5 class="fw-bold fs-14">Tickets</h5>
-                  <p class="fs-14">
-                    Each user can buy 10 tickets. You can add 8 more tickets.
-                  </p>
+                  <h5 class="fw-bold fs-14">Payment methods</h5>
                 </div>
-                <span
-                  class="d-inline-flex align-items-center px-2 py-1 rounded bg-light border"
-                >
-                  <span
-                    class="rounded-circle bg-success me-2"
-                    style="width: 10px; height: 10px"
-                  ></span>
-                  <span class="text-dark small fw-medium">Live</span>
-                </span>
               </div>
 
-              <!-- e-Tickets -->
-              <div class="mb-3">
-                <div class="row">
-                  <!-- Regular Ticket -->
-                  <div class="col-12">
-                    <div
-                      class="ticket-card ticket-bg rounded-4 p-3 d-flex flex-column justify-content-center position-relative"
-                    >
-                      <div
-                        class="d-flex align-items-center justify-content-between"
-                      >
-                        <div class="d-flex align-items-center">
-                          <div
-                            class="ticket-color-regular rounded p-1 me-2 px-2"
-                          >
-                            <span class="small fw-bold">RE</span>
-                          </div>
-                          <h6 class="mb-0 primary-color-text fs-5">Regular</h6>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/alert.svg"
-                            alt="alert"
-                            style="height: 30px; width: 30px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+              <div class="mb-4 payment-section">
+                <!-- Credit/Debit Card -->
+                <div class="payment-option selected" data-payment="card">
                   <div
-                    class="d-flex align-items-center justify-content-between mb-4 mt-3"
+                    class="d-flex justify-content-between align-items-center"
                   >
-                    <div class="rounded p-1 me-2 px-2">
-                      <span class="small fw-bold fs-24">৳500</span>
+                    <div class="d-flex align-items-center" style="height: 40px">
+                      <img src="img/credit-card.svg" class="me-3" alt="" />
+                      <span class="fs-20 primary-color-text full-text"
+                        >Debit/Credit card</span
+                      >
                     </div>
-                    <div class="qty-control d-flex align-items-center">
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24 cursor-pointer"
-                        disabled
-                      >
-                        -
-                      </button>
-                      <span class="qty-num">1</span>
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Platinum Ticket -->
-                  <div class="col-12">
-                    <div
-                      class="ticket-card ticket-bg rounded-4 p-3 d-flex flex-column justify-content-center position-relative"
-                    >
-                      <div
-                        class="d-flex align-items-center justify-content-between"
-                      >
-                        <div class="d-flex align-items-center">
-                          <div
-                            class="ticket-color-platinum rounded p-1 me-2 px-2"
-                          >
-                            <span class="small fw-bold">PL</span>
-                          </div>
-                          <h6 class="mb-0 primary-color-text fs-5">Platinum</h6>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/alert.svg"
-                            alt="alert"
-                            style="height: 30px; width: 30px"
-                          />
-                        </div>
-                      </div>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="img/Visa.png"
+                        alt="Visa"
+                        style="height: 20px; margin-right: 10px"
+                      />
+                      <img
+                        src="img/Mastercard.png"
+                        alt="Mastercard"
+                        style="height: 20px; margin-right: 10px"
+                      />
+                      <img
+                        src="img/amex.png"
+                        alt="Amex"
+                        style="height: 20px; margin-right: 10px"
+                      />
+                      <div class="selection-icon selected"></div>
                     </div>
                   </div>
+                </div>
 
+                <!-- bKash -->
+                <div class="payment-option my-4" data-payment="bkash">
                   <div
-                    class="d-flex align-items-center justify-content-between mb-4 mt-3"
+                    class="d-flex justify-content-between align-items-center"
+                    style="height: 40px"
                   >
-                    <div class="rounded p-1 me-2 px-2">
-                      <span class="small fw-bold fs-24">৳800</span>
+                    <div class="d-flex align-items-center">
+                      <img src="img/bkash.svg" class="me-3" alt="" />
+                      <span class="fs-20">bKash</span>
                     </div>
-                    <div class="qty-control d-flex align-items-center">
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24"
-                        disabled
-                      >
-                        -
-                      </button>
-                      <span class="qty-num">1</span>
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- VIP Ticket -->
-                  <div class="col-12">
-                    <div
-                      class="ticket-card ticket-bg rounded-4 p-3 d-flex flex-column justify-content-center position-relative"
-                    >
-                      <div
-                        class="d-flex align-items-center justify-content-between"
-                      >
-                        <div class="d-flex align-items-center">
-                          <div class="ticket-color-vip rounded p-1 me-2 px-2">
-                            <span class="small fw-bold">VI</span>
-                          </div>
-                          <h6 class="mb-0 primary-color-text fs-5">Vip</h6>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/alert.svg"
-                            alt="alert"
-                            style="height: 30px; width: 30px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="d-flex align-items-center justify-content-between mt-3"
-                  >
-                    <div class="rounded p-1 me-2 px-2">
-                      <span class="small fw-bold fs-24">৳1000</span>
-                    </div>
-                    <div class="qty-control d-flex align-items-center">
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24"
-                        disabled
-                      >
-                        -
-                      </button>
-                      <span class="qty-num">1</span>
-                      <button
-                        class="qty-btn fw-bold d-flex align-items-center justify-content-center primary-color-text fs-24"
-                      >
-                        +
-                      </button>
+                    <div class="d-flex align-items-center">
+                      <img src="img/bkash-logo.png" alt="" class="me-3" />
+                      <div class="selection-icon"></div>
                     </div>
                   </div>
                 </div>
@@ -314,29 +177,83 @@
             </div>
           </div>
 
-          <!-- About Section -->
-          <div class="bg-white rounded-4 p-4 mb-4">
-            <div class="mb-4">
-              <h5 class="fw-bold mb-2 fs-14">Terms & Conditions</h5>
-              <p class="text-muted fs-14 primary-color-text">
-                The ticket holder agrees to these terms and conditions upon the
-                issuance, use, or attempt to use the ticket. Entry is prohibited
-                for individuals under 18 years of age. Tickets are
-                non-refundable, non-exchangeable, and cannot be rescheduled
-                after purchase. By attending the event, the ticket holder
-                consents to the possibility of being photographed, recorded
-                (video and audio), and having such media published online. In
-                the event of cancellation, postponement, or date change by the
-                organizer, the ticket value will be refunded as credit to the
-                customer.
-              </p>
-              <a href="#" class="text-decoration-none primary-color-text"
-                >Read more...</a
+          <!-- Promo Code -->
+
+          <div class="promo row align-items-center search-form mb-2">
+            <div class="col-12 col-md">
+              <div class="form-control-wrapper position-relative h-100">
+                <img
+                  src="img/promo.svg"
+                  alt="Promo"
+                  class="search-icon-inside-input position-absolute"
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  "
+                />
+                <input
+                  type="text"
+                  class="form-control fs-16 primary-color-text mb-3 mb-md-0"
+                  style="
+                    padding: 15px 15px 15px 45px;
+                    border-radius: 12px;
+                    border: none;
+                    height: 64px;
+                  "
+                  placeholder="Add Promo Code"
+                />
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="col-12 col-md-auto">
+              <button
+                class="btn btn-primary primary-color-bg fw-semibold w-100 w-md-auto"
+                style="height: 64px; border-radius: 12px"
               >
+                Add
+              </button>
             </div>
           </div>
 
-          <!-- Popular Events -->
+          <!-- Terms -->
+          <div class="terms mt-4 mb-4">
+            <div class="form-check my-3">
+              <input
+                class="form-check-input rounded-checkbox"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                style="width: 20px; height: 20px"
+              />
+              <label
+                class="form-check-label fs-12 ms-2 primary-color-text"
+                for="flexCheckDefault"
+              >
+                I agree that any re-sale of a ticket on a platform other than
+                flightexpert.com is deemed to be illegal and will therefore
+                result in the account being banned, the ticket will get
+                cancelled, and will not accept any request for ticket or value
+                refund.
+              </label>
+            </div>
+          </div>
+
+          <!-- Confirm Button -->
+
+          <div class="row mb-4">
+            <div class="col-md-6 col-sm-12">
+              <button
+                class="btn btn-danger primary-color-bg w-100 mb-3 py-3 fs-16 fw-bold rounded-4 my-3"
+              >
+                Confirm and pay
+              </button>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
         </div>
 
         <!-- Sidebar -->
@@ -458,24 +375,6 @@
                     <span class="fs-18 fw-bold">৳1500</span>
                   </div>
                 </div>
-
-                <button
-                  class="btn btn-danger primary-color-bg w-100 mb-3 py-3 fs-16 fw-bold rounded-4 my-3"
-                >
-                  Checkout
-                </button>
-              </div>
-            </div>
-            <div class="card rounded-4 border-0 my-3">
-              <div class="card-body">
-                <div class="d-flex justify-content-center my-2">
-                  <img
-                    src="img/payment-logo.png"
-                    alt=""
-                    style="height: 32px"
-                    class="img-fluid"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -529,5 +428,51 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Payment method selection
+      document.querySelectorAll(".payment-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          // Remove selected class from all options
+          document.querySelectorAll(".payment-option").forEach((opt) => {
+            opt.classList.remove("selected");
+            opt.querySelector(".selection-icon").classList.remove("selected");
+          });
+
+          // Add selected class to clicked option
+          this.classList.add("selected");
+          this.querySelector(".selection-icon").classList.add("selected");
+
+          // Update confirm button text based on selection
+          const paymentType = this.getAttribute("data-payment");
+          const confirmBtn = document.querySelector(".confirm-btn");
+          if (paymentType === "bkash") {
+            confirmBtn.textContent = "Confirm and pay with bKash ৳1500";
+          } else {
+            confirmBtn.textContent = "Confirm and pay ৳1500";
+          }
+        });
+      });
+
+      // Countdown timer
+      function updateCountdown() {
+        const countdownElement = document.querySelector(".countdown");
+        let time = 544; // 9:04 in seconds
+
+        setInterval(() => {
+          const minutes = Math.floor(time / 60);
+          const seconds = time % 60;
+          countdownElement.innerHTML = `<i class="fas fa-clock"></i> ${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} to book`;
+          time--;
+
+          if (time < 0) {
+            time = 544; // Reset timer
+          }
+        }, 1000);
+      }
+
+      updateCountdown();
+    </script>
   </body>
 </html>

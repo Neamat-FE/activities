@@ -59,3 +59,30 @@ body {
 .border-color {
   border: 2px solid #dedede !important;
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .search-form {
+    padding: 0.75rem;
+  }
+
+  .btn-search {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .event-search-bar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .event-search-bar .form-control-wrapper {
+    width: 100%;
+  }
+  .event-search-bar .btn-danger {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
