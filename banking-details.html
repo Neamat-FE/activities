@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Details Page</title>
+    <link rel="icon" href="img/logo.svg" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/banking-details.css" />
+  </head>
+  <body class="body-bg">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand primary-color" href="#">
+          <img src="img/logo.svg" alt="" style="height: 40px; width: 40px" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Flight</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hotel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Visa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">E-Sim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active body-bg rounded-3" href="#">Activity</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center">
+            <span class="me-3">Sell</span>
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fas fa-user-circle me-1"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="form-container">
+            <h2 class="mb-4 fs-14 fw-bold">Banking Details</h2>
+
+            <form>
+              <!-- Bank Selection -->
+              <div class="mb-4">
+                <label for="country" class="form-label">
+                  Bank Name
+                  <span class="required">*</span>
+                </label>
+                <select class="form-select fs-14" id="country" required>
+                  <option value="" disabled selected>Select a Bank</option>
+                  <option value="cb">City Bank</option>
+                  <option value="dbbl">Dutch Bangla Bank</option>
+                  <option value="sibl">Social Islami Bank</option>
+                </select>
+              </div>
+
+              <!-- Account Name -->
+              <div class="mb-4">
+                <label for="businessName" class="form-label">
+                  Account Name <span class="required">*</span>
+                </label>
+                <p class="text-muted small secondary-color-text fs-14">
+                  Account name as written in the CR
+                </p>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="businessName"
+                  placeholder="Enter Account Name"
+                  required
+                />
+              </div>
+
+              <!-- IBAN Number -->
+              <div class="mb-4">
+                <label for="businessName" class="form-label">
+                  IBAN Number 
+                </label>
+                
+                <input
+                  type="text"
+                  class="form-control"
+                  id="businessName"
+                  placeholder="Enter IBAN Number"
+                  required
+                />
+              </div>
+
+              <!-- Confirm IBAN Number -->
+              <div class="mb-4">
+                <label for="businessName" class="form-label">
+                  Confirm IBAN Number 
+                </label>
+                
+                <input
+                  type="text"
+                  class="form-control"
+                  id="businessName"
+                  placeholder="Enter IBAN Number"
+                  required
+                />
+              </div>
+
+                <!-- Submit Button -->
+
+                <div class="row mt-5">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="start-button ">
+                  <button
+                    class="btn btn-danger border-color-bg primary-color-text w-100 py-3 border-0 fs-16 fw-bold rounded-4"
+                  >
+                    Edit
+                  </button>
+                </div>
+                    
+                  </div>
+                  <div class="col-md-6 col-sm-12 mt-3 mt-md-0">
+                    <div class="start-button ">
+                  <button
+                    class="btn btn-danger primary-color-bg w-100 py-3 fs-16 fw-bold rounded-4"
+                  >
+                    Save and Continue
+                  </button>
+                </div>
+                  </div>
+
+                </div>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+.sidebar {
+  min-height: 100vh;
+  padding: 0;
+}
+
+.sidebar-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar-item:hover {
+  background-color: #e9ecef;
+}
+
+.sidebar-item.active {
+  background-color: #dedede;
+}
+
+.stats-card {
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.form-label {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1d1d1f;
+  margin-bottom: 0.5rem;
+}
+.form-control,
+.form-select {
+  border: none !important;
+  border-radius: 12px;
+  padding: 22px;
+  font-size: 14px;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #eb1933;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+    padding: 0;
+  }
+}
