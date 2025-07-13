@@ -7,29 +7,26 @@
     <link rel="icon" href="img/logo.svg" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/global.css" />
   </head>
   <body class="body-bg">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
+      <div class="container d-flex align-items-center">
         <a class="navbar-brand primary-color" href="#">
-          <img src="img/logo.svg" alt="" style="height: 40px; width: 40px" />
+          <img src="img/logo.svg" alt style="height: 40px; width: 40px" />
         </a>
 
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
+          data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -52,15 +49,22 @@
             </li>
           </ul>
 
-          <div class="d-flex align-items-center">
-            <span class="me-3">Sell</span>
+          <div class="d-flex align-items-center justify-content-center">
+            <span class="me-3 primary-color-text">Sell</span>
+            <a href="#">
+              <img
+                src="img/world-icon.svg"
+                class="me-3"
+                alt
+                style="height: 16px; width: 16px" />
+            </a>
+
             <div class="dropdown">
               <button
-                class="btn btn-outline-secondary dropdown-toggle"
+                class="btn btn-outline-secondary dropdown-toggle ticket-bg border-0 px-3 py-2 rounded-3"
                 type="button"
-                data-bs-toggle="dropdown"
-              >
-                <i class="fas fa-user-circle me-1"></i>
+                data-bs-toggle="dropdown">
+                <img src="img/user-icon.svg" alt />
               </button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -84,14 +88,12 @@
         <div class="row g-3 align-items-center">
           <div class="col-lg-3 col-md-6">
             <div
-              class="search-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3"
-            >
+              class="search-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3">
               <select
                 class="form-select bg-transparent border-0 p-0 fs-16 fw-semibold shadow-none primary-color-text position-absolute left-0 w-100 h-100 cursor-pointer z-2"
                 style="top: 0; left: 0; opacity: 0; cursor: pointer; z-index: 2"
                 aria-label="Select location"
-                onchange="document.getElementById('displayLocation').textContent = this.options[this.selectedIndex].text;"
-              >
+                onchange="document.getElementById('displayLocation').textContent = this.options[this.selectedIndex].text;">
                 <option selected>Dhaka</option>
                 <option value="comilla">Comilla</option>
                 <option value="sylhet">Sylhet</option>
@@ -101,33 +103,27 @@
                 src="img/location-icon.svg"
                 alt="Icon"
                 class="field-icon position-relative flex-shrink-0 z-index-1"
-                style="width: 24px; height: 32px"
-              />
+                style="width: 24px; height: 32px" />
               <div
                 class="field-content flex-fill d-flex flex-column position-relative z-1"
-                style="gap: 2px"
-              >
+                style="gap: 2px">
                 <div
                   class="field-label fs-14 secondary-color-text"
-                  style="margin-bottom: 2px"
-                >
+                  style="margin-bottom: 2px">
                   Location
                 </div>
                 <div
-                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none"
-                >
+                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none">
                   <span id="displayLocation">Dhaka</span>
                   <svg
                     class="dropdown-arrow primary-color-text"
                     style="width: 20px; height: 20px; z-index: 1"
                     viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
+                    fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </div>
@@ -136,14 +132,12 @@
 
           <div class="col-lg-3 col-md-6">
             <div
-              class="search-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3"
-            >
+              class="search-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3">
               <select
                 class="form-select bg-transparent border-0 p-0 fs-16 fw-semibold shadow-none primary-color-text position-absolute left-0 w-100 h-100 cursor-pointer z-2"
                 style="top: 0; left: 0; opacity: 0; cursor: pointer; z-index: 2"
                 aria-label="Select event type"
-                onchange="document.getElementById('displayEventType').textContent = this.options[this.selectedIndex].text;"
-              >
+                onchange="document.getElementById('displayEventType').textContent = this.options[this.selectedIndex].text;">
                 <option selected>All</option>
                 <option value="conference">Conference</option>
                 <option value="workshop">Workshop</option>
@@ -152,33 +146,27 @@
                 src="img/event-ticket.svg"
                 alt="Icon"
                 class="field-icon position-relative"
-                style="width: 24px; height: 32px"
-              />
+                style="width: 24px; height: 32px" />
               <div
                 class="field-content flex-fill d-flex flex-column position-relative z-1"
-                style="gap: 2px"
-              >
+                style="gap: 2px">
                 <div
                   class="field-label fs-14 secondary-color-text"
-                  style="margin-bottom: 2px"
-                >
+                  style="margin-bottom: 2px">
                   Event Type
                 </div>
                 <div
-                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none"
-                >
+                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none">
                   <span id="displayEventType">All</span>
                   <svg
                     class="dropdown-arrow primary-color-text"
                     style="width: 20px; height: 20px; z-index: 1"
                     viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
+                    fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </div>
@@ -187,8 +175,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div
-              class="search-field date-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3"
-            >
+              class="search-field date-field bg-white d-flex align-items-center position-relative cursor-pointer rounded-3 px-4 py-3">
               <input
                 type="date"
                 class="form-control position-absolute top-0 left-0 w-100 h-100 opacity-0 cursor-pointer z-2 webkit-appearance-none"
@@ -203,40 +190,33 @@
                                } else {
                                    displaySpan.textContent = 'All dates';
                                }
-                           "
-              />
+                           " />
 
               <img
                 src="img/calendar.svg"
                 alt="Icon"
                 class="field-icon position-relative"
-                style="width: 24px; height: 32px"
-              />
+                style="width: 24px; height: 32px" />
               <div
                 class="field-content flex-fill d-flex flex-column position-relative z-1"
-                style="gap: 2px"
-              >
+                style="gap: 2px">
                 <div
                   class="field-label fs-14 secondary-color-text"
-                  style="margin-bottom: 2px"
-                >
+                  style="margin-bottom: 2px">
                   Date
                 </div>
                 <div
-                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none"
-                >
+                  class="field-display d-flex align-items-center justify-content-between w-100 pointer-events-none">
                   <span id="displayDate">All dates</span>
                   <svg
                     class="dropdown-arrow primary-color-text flex-shrink-0 position-relative"
                     style="width: 20px; height: 20px; z-index: 1"
                     viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
+                    fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </div>
@@ -246,8 +226,7 @@
           <div class="col-lg-3 col-md-6">
             <button
               class="search-button w-100 text-white primary-color-bg border-0 fs-16 fw-semibold cursor-pointer"
-              type="button"
-            >
+              type="button">
               Search
             </button>
           </div>
@@ -255,21 +234,30 @@
       </div>
     </div>
 
-    <!-- Slider -->
+    <!-- Banner image -->
 
-    <div class="container mt-5 pt-4">
+    <div class="container my-5">
       <div class="col-12">
         <div class="d-flex justify-content-end align-items-center gap-2 mb-4">
-          <a
-            href="#"
-            class="primary-color-text fs-16 text-decoration-none fs-16 fw-medium"
-            >See more</a
-          >
-          <button class="btn p-0 border-0 bg-transparent me-3">
-            <img src="img/arrow-left-inactive.svg" alt="" />
+          <h6
+            class="primary-color-text text-decoration-none me-2 fs-16 fw-medium">See
+            more</h6>
+
+          <!-- Custom Arrow Buttons -->
+          <button
+            class="carousel-btn border-0 bg-transparent"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <img src="img/arrow-left-inactive.svg" alt="Prev" />
           </button>
-          <button class="btn p-0 border-0 bg-transparent">
-            <img src="img/arrow-right-active.svg" alt="" />
+
+          <button
+            class="carousel-btn border-0 bg-transparent"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <img src="img/arrow-right-active.svg" alt="Next" />
           </button>
         </div>
       </div>
@@ -279,8 +267,7 @@
           <div
             id="carouselExample"
             class="carousel slide"
-            data-bs-ride="carousel"
-          >
+            data-bs-ride="carousel">
             <!-- Indicators/Dot Controllers -->
             <div class="carousel-indicators">
               <button
@@ -289,26 +276,22 @@
                 data-bs-slide-to="0"
                 class="active"
                 aria-current="true"
-                aria-label="Slide 1"
-              ></button>
+                aria-label="Slide 1"></button>
               <button
                 type="button"
                 data-bs-target="#carouselExample"
                 data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
+                aria-label="Slide 2"></button>
               <button
                 type="button"
                 data-bs-target="#carouselExample"
                 data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+                aria-label="Slide 3"></button>
               <button
                 type="button"
                 data-bs-target="#carouselExample"
                 data-bs-slide-to="3"
-                aria-label="Slide 4"
-              ></button>
+                aria-label="Slide 4"></button>
             </div>
 
             <!-- Slides -->
@@ -318,8 +301,7 @@
                 <img
                   src="img/banner-img.png"
                   class="d-block w-100 img-fluid rounded"
-                  alt="banner img"
-                />
+                  alt="banner img" />
               </div>
 
               <!-- Slide 2 -->
@@ -327,8 +309,7 @@
                 <img
                   src="img/banner-img.png"
                   class="d-block w-100 img-fluid rounded"
-                  alt="banner img"
-                />
+                  alt="banner img" />
               </div>
 
               <!-- Slide 3 -->
@@ -336,8 +317,7 @@
                 <img
                   src="img/banner-img.png"
                   class="d-block w-100 img-fluid rounded"
-                  alt="banner img"
-                />
+                  alt="banner img" />
               </div>
 
               <!-- Slide 4 -->
@@ -345,8 +325,7 @@
                 <img
                   src="img/banner-img.png"
                   class="d-block w-100 img-fluid rounded"
-                  alt="banner img"
-                />
+                  alt="banner img" />
               </div>
             </div>
           </div>
@@ -357,8 +336,7 @@
     <!-- Search by Name -->
     <div class="container">
       <div
-        class="event-search-bar row align-items-center p-4 gap-3 my-5 search-form"
-      >
+        class="event-search-bar row align-items-center p-4 gap-3 my-5 search-form">
         <!-- Input Field -->
         <div class="col-12 col-md flex-grow-1">
           <div class="form-control-wrapper position-relative">
@@ -372,14 +350,12 @@
                 left: 15px;
                 top: 50%;
                 transform: translateY(-50%);
-              "
-            />
+              " />
             <input
               type="text"
               class="form-control"
               style="padding: 15px 15px 15px 45px"
-              placeholder="Search..."
-            />
+              placeholder="Search..." />
           </div>
         </div>
 
@@ -391,78 +367,463 @@
         </div>
       </div>
     </div>
+    <!-- Search by name ends here -->
 
-    <!-- Popular Events -->
-    <div class="container">
+    <!-- popular slider-->
+    <div class="container my-4 py-4">
+      <!-- Navigation Header -->
       <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div
+          class="d-flex justify-content-between justify-content-center align-items-center mb-4">
           <h2 class="mb-0 fs-22">Popular</h2>
           <div class="d-flex align-items-center gap-2">
-            <a
-              href="#"
-              class="primary-color-text text-decoration-none me-2 fs-16 fw-medium"
-              >See more</a
-            >
-            <button class="btn p-0 border-0 bg-transparent me-3">
-              <img src="img/arrow-left-inactive.svg" alt="" />
+            <h6
+              class="primary-color-text text-decoration-none me-2 fs-16 fw-medium">See
+              more</h6>
+            <button class="btn border-0 bg-transparent"
+              data-bs-target="#categoryCarousel" data-bs-slide="prev">
+              <img src="img/arrow-left-inactive.svg" class="img-fluid p-0 m-0"
+                alt>
             </button>
-            <button class="btn p-0 border-0 bg-transparent">
-              <img src="img/arrow-right-active.svg" alt="" />
+            <button class="btn border-0 bg-transparent"
+              data-bs-target="#categoryCarousel" data-bs-slide="next">
+              <img src="img/arrow-right-active.svg" class="img-fluid p-0 m-0"
+                alt>
             </button>
           </div>
         </div>
+
       </div>
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-3">
-          <div
-            class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20"
-          >
-            <img
-              src="img/popular-1.png"
-              class="w-100 h-auto object-fit-cover"
-              alt="Brown Magic Experience"
-            />
-            <div class="p-3">
-              <h6>Brown Magic Experience THE MENTALIST</h6>
-              <div class="d-flex align-items-center mt-2">
+      <!-- Bootstrap Carousel -->
+      <div id="categoryCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row ">
+              <div class="col-lg-4 col-md-6 mb-3">
                 <div
-                  class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3"
-                >
-                  <div style="font-size: 1.2rem; font-weight: bold">11</div>
-                  <div style="font-size: 0.8rem">JAN</div>
-                </div>
-                <div class="flex-grow-1">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <small class="text-muted primary-color-text">
-                        <img
-                          src="img/location-icon.svg"
-                          alt="Location"
-                          width="20"
-                          height="20"
-                          style="margin-right: 4px"
-                        />
-                        Aloki
-                      </small>
-                      <div class="price-tag fs-12 primary-color-text mt-2">
-                        <img
-                          src="img/price-icon.svg"
-                          alt="Location"
-                          width="20"
-                          height="20"
-                          style="margin-right: 4px"
-                        />
-                        Price starts from <span class="fw-bold">৳500</span>
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-1.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              Aloki
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                    <button
-                      class="btn btn-sm text-end p-0 border-0 bg-transparent"
-                    >
-                      <img src="img/card-arrow.svg" alt="" />
-                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-2.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              ICCB Hall 4
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-3.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              KIB Auditorium
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row ">
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-1.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              Aloki
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-2.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              ICCB Hall 4
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-3.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              KIB Auditorium
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row ">
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-1.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              Aloki
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-2.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              ICCB Hall 4
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div
+                  class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20">
+                  <img src="img/popular-3.png"
+                    class="w-100 h-auto object-fit-cover"
+                    alt="Brown Magic Experience" />
+                  <div class="p-3">
+                    <h6 class="fs-16 fw-bold">Brown Magic Experience THE
+                      MENTALIST</h6>
+                    <div class="d-flex align-items-center mt-2">
+                      <div
+                        class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3">
+                        <div class="fs-16 fw-bold">11</div>
+                        <div class="fs-16">JAN</div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <small class="text-muted primary-color-text">
+                              <svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor" style="margin-right: 4px">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              KIB Auditorium
+                            </small>
+                            <div
+                              class="price-tag fs-12 primary-color-text mt-2">
+                              <i class="fa-solid fa-tag" class="me-5"
+                                style="margin-right: 4px ;width: 20;height: 20;"></i>
+                              Price starts from <span
+                                class="fw-bold fs-12">৳500</span>
+                            </div>
+                          </div>
+                          <button class="btn p-0 border-0 bg-transparent"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <img src="img/card-arrow.svg" alt="Arrow Icon"
+                              style="width: 100%; height: 100%; object-fit: contain;" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -470,260 +831,253 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-3">
-          <div
-            class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20"
-          >
-            <img
-              src="img/popular-2.png"
-              class="w-100 h-auto object-fit-cover"
-              alt="Brown Magic Experience"
-            />
-            <div class="p-3">
-              <h6>Brown Magic Experience THE MENTALIST</h6>
-              <div class="d-flex align-items-center mt-2">
-                <div
-                  class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3"
-                >
-                  <div style="font-size: 1.2rem; font-weight: bold">11</div>
-                  <div style="font-size: 0.8rem">JAN</div>
-                </div>
-                <div class="flex-grow-1">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <small class="text-muted primary-color-text">
-                        <img
-                          src="img/location-icon.svg"
-                          alt="Location"
-                          width="20"
-                          height="20"
-                          style="margin-right: 4px"
-                        />
-                        ICCB Hall 4
-                      </small>
-                      <div class="price-tag fs-12 primary-color-text mt-2">
-                        <img
-                          src="img/price-icon.svg"
-                          alt="Location"
-                          width="20"
-                          height="20"
-                          style="margin-right: 4px"
-                        />
-                        Price starts from <span class="fw-bold">৳1200</span>
-                      </div>
-                    </div>
-                    <button
-                      class="btn btn-sm text-end p-0 border-0 bg-transparent"
-                    >
-                      <img src="img/card-arrow.svg" alt="" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <div class="col-lg-4 col-md-6 mb-3">
-          <div
-            class="popular-card bg-white overflow-hidden rounded-4 mb-3 rounded-20"
-          >
-            <img
-              src="img/popular-3.png"
-              class="w-100 h-auto object-fit-cover"
-              alt="Brown Magic Experience"
-            />
-            <div class="p-3">
-              <h6>Brown Magic Experience THE MENTALIST</h6>
-              <div class="d-flex align-items-center mt-2">
-                <div
-                  class="date-badge me-3 primary-color-text-bg text-white p-2 rounded-2 text-center me-3"
-                >
-                  <div style="font-size: 1.2rem; font-weight: bold">19</div>
-                  <div style="font-size: 0.8rem">JAN</div>
-                </div>
-                <div class="flex-grow-1">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <img
-                        src="img/location-icon.svg"
-                        alt="Location"
-                        width="20"
-                        height="20"
-                        style="margin-right: 4px"
-                      />
-                      KIB Auditorium
-                      <div class="price-tag fs-12 primary-color-text mt-2">
-                        <img
-                          src="img/price-icon.svg"
-                          alt="Location"
-                          width="20"
-                          height="20"
-                          style="margin-right: 4px"
-                        />
-                        Price starts from <span class="fw-bold">৳1500</span>
-                      </div>
-                    </div>
-                    <button
-                      class="btn btn-sm text-end p-0 border-0 bg-transparent"
-                    >
-                      <img src="img/card-arrow.svg" alt="" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Bootstrap Carousel Indicators -->
+      <div class="carousel-indicators position-static justify-content-center">
+        <button type="button" data-bs-target="#categoryCarousel"
+          data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#categoryCarousel"
+          data-bs-slide-to="2" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#categoryCarousel"
+          data-bs-slide-to="3" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#categoryCarousel"
+          data-bs-slide-to="4" aria-label="Slide 3"></button>
       </div>
     </div>
-
-    <!-- Pagination dots for Popular section -->
-    <div
-      class="popular-pagination-dots d-flex justify-content-center mt-3 mb-5"
-    >
-      <div class="dot active primary-color-text-bg"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
     <!-- Categories -->
-    <div class="container">
+    <div class="container my-5">
       <div class="col-12">
         <div class="d-flex justify-content-end align-items-center gap-2 mb-4">
-          <a
-            href="#"
-            class="primary-color-text fs-16 text-decoration-none fs-16 fw-medium"
-            >See more</a
-          >
-          <button class="btn p-0 border-0 bg-transparent me-3">
-            <img src="img/arrow-left-inactive.svg" alt="" />
+          <h6
+            class="primary-color-text text-decoration-none me-2 fs-16 fw-medium">
+            See more
+          </h6>
+
+          <!-- Custom Arrow Buttons -->
+          <button
+            class="carousel-btn border-0 bg-transparent"
+            type="button"
+            data-bs-target="#carouselExample1"
+            data-bs-slide="prev">
+            <img src="img/arrow-left-inactive.svg" alt="Prev" />
           </button>
-          <button class="btn p-0 border-0 bg-transparent">
-            <img src="img/arrow-right-active.svg" alt="" />
+
+          <button
+            class="carousel-btn border-0 bg-transparent"
+            type="button"
+            data-bs-target="#carouselExample1"
+            data-bs-slide="next">
+            <img src="img/arrow-right-active.svg" alt="Next" />
           </button>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-1.png"
-              class="w-100 object-fit-cover rounded-3"
-              alt="Activities & Adventures"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Activities and Adventures</div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div id="carouselExample1" class="carousel slide"
+            data-bs-ride="false">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExample1"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExample1"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExample1"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-2.png"
-              class="w-100 object-fit-cover"
-              alt="Music Events"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Music Events</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-3.png"
-              class="w-100 object-fit-cover"
-              alt="Music Events"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Music Events</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-4.png"
-              class="w-100 object-fit-cover"
-              alt="Performing Arts"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Theater and Performing Arts</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-5.png"
-              class="w-100 object-fit-cover"
-              alt="Experiences"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Experiences</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6 mb-3">
-          <div
-            class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative"
-          >
-            <img
-              src="img/categories-6.png"
-              class="w-100 object-fit-cover"
-              alt="Restaurants"
-            />
-            <div
-              class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold"
-            >
-              <div>Restaurants</div>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-1.png"
+                        class="w-100 object-fit-cover rounded-3"
+                        alt="Activities & Adventures" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Activities and Adventures</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-2.png"
+                        class="w-100 object-fit-cover"
+                        alt="Music Events" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Music Events</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-3.png"
+                        class="w-100 object-fit-cover"
+                        alt="Music Events" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Music Events</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-4.png"
+                        class="w-100 object-fit-cover"
+                        alt="Performing Arts" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Theater and Performing Arts</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-5.png"
+                        class="w-100 object-fit-cover"
+                        alt="Experiences" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Experiences</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-6.png"
+                        class="w-100 object-fit-cover"
+                        alt="Restaurants" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Restaurants</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-1.png"
+                        class="w-100 object-fit-cover rounded-3"
+                        alt="Activities & Adventures" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Activities and Adventures</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-2.png"
+                        class="w-100 object-fit-cover"
+                        alt="Music Events" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Music Events</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-3.png"
+                        class="w-100 object-fit-cover"
+                        alt="Music Events" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Music Events</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-4.png"
+                        class="w-100 object-fit-cover"
+                        alt="Performing Arts" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Theater and Performing Arts</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-5.png"
+                        class="w-100 object-fit-cover"
+                        alt="Experiences" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Experiences</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-6 mb-1">
+                    <div
+                      class="category-card object-fit-cover rounded-3 overflow-hidden mb-3 position-relative">
+                      <img
+                        src="img/categories-6.png"
+                        class="w-100 object-fit-cover"
+                        alt="Restaurants" />
+                      <div
+                        class="category-overlay position-absolute bottom-0 left-0 right-0 color-white p-3 fw-semibold">
+                        <div>Restaurants</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Pagination dots for Popular section -->
-    <div
-      class="popular-pagination-dots d-flex justify-content-center mt-3 mb-5"
-    >
-      <div class="dot active primary-color-text-bg"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
     </div>
 
     <!-- Footer -->
     <footer
       class="footer body-bg mt-5 py-4 border-top"
-      style="border-color: #e9ecef"
-    >
+      style="border-color: #e9ecef">
       <div class="container">
         <div class="row">
           <div class="col-md-3 mb-4">
@@ -764,6 +1118,7 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

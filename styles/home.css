@@ -80,6 +80,7 @@
 .carousel-indicators {
   bottom: -50px;
   margin-bottom: 0;
+  margin-top:-60px !important ;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -118,3 +119,4 @@
 .footer a:hover {
   color: #eb1933;
 }
+
