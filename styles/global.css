@@ -63,6 +63,10 @@ body {
   background-color: #dedede !important;
 }
 
+.green-color{
+  background-color: #00D250 !important;
+}
+
 @media (max-width: 768px) {
   .hero-section {
     margin: 1rem 0;

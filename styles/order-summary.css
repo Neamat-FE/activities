@@ -49,6 +49,12 @@ input[type="checkbox"]:checked {
   background-color: #eb1933 !important;
   border: 1px solid #eb1933 !important;
 }
+.form-control:focus,
+.form-select:focus {
+  border-color: #eb1933 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
 
 @media (max-width: 576px) {
   .payment-section .full-text {
