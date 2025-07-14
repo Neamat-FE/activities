@@ -89,3 +89,23 @@ body {
     margin-top: 15px;
   }
 }
+
+
+@media (max-width: 576px) { 
+  .feature-text {
+    font-size: 10px;
+  }
+ }
+
+@media (max-width: 768px) { 
+  .feature-text {
+    font-size: 10px;
+  }
+ }
+
+@media (max-width: 992px) {
+  .feature-text {
+    font-size: 10px;
+  }
+ }
+
