@@ -201,7 +201,6 @@
                   placeholder="Add Promo Code" />
               </div>
             </div>
-
             <!-- Button -->
             <div class="col-12 col-md-auto">
               <button
@@ -422,38 +421,8 @@
           // Add selected class to clicked option
           this.classList.add("selected");
           this.querySelector(".selection-icon").classList.add("selected");
-
-          // Update confirm button text based on selection
-          const paymentType = this.getAttribute("data-payment");
-          const confirmBtn = document.querySelector(".confirm-btn");
-          if (paymentType === "bkash") {
-            confirmBtn.textContent = "Confirm and pay with bKash ৳1500";
-          } else {
-            confirmBtn.textContent = "Confirm and pay ৳1500";
-          }
         });
       });
-
-      // Countdown timer
-      function updateCountdown() {
-        const countdownElement = document.querySelector(".countdown");
-        let time = 544; // 9:04 in seconds
-
-        setInterval(() => {
-          const minutes = Math.floor(time / 60);
-          const seconds = time % 60;
-          countdownElement.innerHTML = `<i class="fas fa-clock"></i> ${minutes
-            .toString()
-            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} to book`;
-          time--;
-
-          if (time < 0) {
-            time = 544; // Reset timer
-          }
-        }, 1000);
-      }
-
-      updateCountdown();
     </script>
   </body>
 </html>
