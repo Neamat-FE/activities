@@ -35,3 +35,8 @@
 .input-group .form-select {
   border-left: none;
 }
+@media (max-width: 576px) {
+  .upload-area span {
+    display: none;
+  }
+}
