@@ -293,7 +293,7 @@
             </div>
 
             <!-- Slides -->
-            <div class="carousel-inner">
+            <div class="carousel-inner rounded-4">
               <!-- Slide 1 -->
               <div class="carousel-item active">
                 <img
@@ -331,39 +331,48 @@
       </div>
     </div>
     <!-- Search by Name -->
-    <div class="container">
-      <div
-        class="event-search-bar row align-items-center p-4 gap-3 my-5 search-form">
-        <!-- Input Field -->
-        <div class="col-12 col-md flex-grow-1">
-          <div class="form-control-wrapper position-relative">
-            <img
-              src="img/event-ticket.svg"
-              alt="Location"
-              class="search-icon-inside-input position-absolute"
-              style="
-                width: 16px;
-                height: 30px;
-                left: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-              " />
-            <input
-              type="text"
-              class="form-control"
-              style="padding: 15px 15px 15px 45px"
-              placeholder="Search..." />
-          </div>
-        </div>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="event-search-bar ticket-bg p-4 rounded-4">
+            <div class="row g-3 align-items-center">
 
-        <!-- Button -->
-        <div class="col-12 col-md-auto">
-          <button class="btn btn-primary fw-semibold w-100 w-md-auto">
-            Search
-          </button>
+              <!-- Input Field (8 columns on md+) -->
+              <div class="col-12 col-md-8">
+                <div class="form-control-wrapper position-relative">
+                  <img
+                    src="img/event-ticket.svg"
+                    alt="Location"
+                    class="position-absolute"
+                    style="
+                  width: 16px;
+                  height: 30px;
+                  left: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                " />
+                  <input
+                    type="text"
+                    class="form-control border-0 rounded-3"
+                    style="padding: 15px 15px 15px 45px"
+                    placeholder="Find an Event by Name..." />
+                </div>
+              </div>
+
+              <!-- Button (4 columns on md+) -->
+              <div class="col-12 col-md-4">
+                <button
+                  class="btn btn-primary primary-color-bg w-100 px-5 fw-semibold">
+                  Search
+                </button>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- popular -->
     <div class="container my-5 pt-3">
       <div class="col-12">
